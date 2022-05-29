@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+
+/* #122027, #004441, #444444, #354F66, #090B0C coolors.co generated pallete from background 
+*/
+
+:root {
+    --main-primary: #004441;
+    --main-secondary: #122027;
+    --main-accent: #354F66;
+    --main-text: #fff;
+    --main-dark: #090B0C;
+    --main-dark-secondary: #0B0D0C;
+    --main-gray: #444444;
+}
+
+nav {
+    height: 65px;
+    background-color: var(--main-dark);
+}
+
+main {
+    background-image: url(../img/quiz-overlay.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+footer {
+    height: 85px;
+    background-color: var(--main-dark-secondary);
+}
