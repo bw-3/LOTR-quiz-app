@@ -1,3 +1,6 @@
+/* FONT IMPORT */
+
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 * {
     box-sizing: border-box;
     padding: 0;
@@ -21,10 +24,6 @@
     --main-gray: #444444;
 }
 
-
-/* FONTS */
-
-@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 body {
     color: var(--main-text);
 }
@@ -42,7 +41,7 @@ main {
 }
 
 footer {
-    height: 85px;
+    height: fit-content;
     background-color: var(--main-dark-secondary);
 }
 
@@ -60,6 +59,7 @@ footer {
     color: var(--main-accent);
     padding: 5px;
     margin-left: 15px;
+    margin-right: 5px;
     transform: rotate3d(1, 0, 1, 30deg);
     vertical-align: middle;
 }
@@ -71,7 +71,8 @@ footer {
 #logo span {
     font-family: 'Varela Round', sans-serif;
     vertical-align: middle;
-    font-size: 1.75rem;
+    font-size: 2rem;
+    font-weight: bold;
 }
 
 #dropdown i {
@@ -81,4 +82,32 @@ footer {
 
 #drop-menu {
     display: none;
+}
+
+
+/* FOOTER */
+
+#footer-content {
+    display: flex;
+    height: fit-content;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--main-dark-secondary);
+    padding: 1rem;
+}
+
+#footer-content span i {
+    color: var(--main-accent);
+    vertical-align: middle;
+    padding-bottom: 5px;
+    transform: rotate3d(1, 0, 1, 30deg);
+}
+
+#footer-content span:first-of-type {
+    font-size: 2rem;
+}
+
+#footer-content span:last-of-type {
+    font-size: 1rem;
 }
