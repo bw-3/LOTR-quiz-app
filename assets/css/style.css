@@ -8,6 +8,9 @@
 /* #122027, #004441, #444444, #354F66, #090B0C coolors.co generated pallete from background 
 */
 
+
+/* COLORS */
+
 :root {
     --main-primary: #004441;
     --main-secondary: #122027;
@@ -16,6 +19,14 @@
     --main-dark: #090B0C;
     --main-dark-secondary: #0B0D0C;
     --main-gray: #444444;
+}
+
+
+/* FONTS */
+
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+body {
+    color: var(--main-text);
 }
 
 nav {
@@ -33,4 +44,41 @@ main {
 footer {
     height: 85px;
     background-color: var(--main-dark-secondary);
+}
+
+
+/* NAVBAR */
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo i {
+    font-size: 3rem;
+    color: var(--main-accent);
+    padding: 5px;
+    margin-left: 15px;
+    transform: rotate3d(1, 0, 1, 30deg);
+    vertical-align: middle;
+}
+
+#logo i:hover {
+    color: var(--main-gray);
+}
+
+#logo span {
+    font-family: 'Varela Round', sans-serif;
+    vertical-align: middle;
+    font-size: 1.75rem;
+}
+
+#dropdown i {
+    font-size: 2rem;
+    margin-right: 15px;
+}
+
+#drop-menu {
+    display: none;
 }
