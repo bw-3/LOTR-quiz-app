@@ -1,6 +1,6 @@
-/*10 sample questions to generate code, source: 
-https://www.sparknotes.com/film/lordoftherings/quiz/
-*/
+/* Array of 10 objects, each object contains 
+data for question, options, and correct answer*/
+
 const quizQuestions = [{
         Question: 'Who possesses the ring of power at the start of the trilogy?',
         a: 'Gandalf',
@@ -81,3 +81,15 @@ const quizQuestions = [{
 
     }
 ]
+
+//set constants for quiz game
+
+const userSetupEl = document.querySelector('#user-setup')
+const quizWrapper = document.querySelector('#quiz-wrapper')
+const quizCompleteEl = document.querySelector('#quiz-complete')
+const questionEl = document.querySelector('#question')
+const submitQ = document.querySelector('#quiz-submit')
+const answer_a = document.querySelector('#answer_a')
+const answer_b = document.querySelector('#answer_b')
+const answer_c = document.querySelector('#answer_c')
+const answer_d = document.querySelector('#answer_d')

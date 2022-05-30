@@ -12,8 +12,13 @@
 </head>
 
 <body>
+
+    <!-- NAVIGATION BAR -->
+
     <nav>
         <div class="container">
+
+
             <div class="nav-bar">
                 <div id="logo">
                     <i class="fa-solid fa-ring"></i>
@@ -22,6 +27,9 @@
                 <div id="dropdown">
                     <i class="fa-solid fa-bars"></i>
                 </div>
+
+                <!-- Drop down menu, hidden on mobile by default, opens up menu when user click on hamburer menu #dropdown -->
+
                 <div id="drop-menu">
                     <ul class="dropdown-list">
                         <li class="dropdown-item">Play the Quiz</li>
@@ -32,19 +40,39 @@
             </div>
         </div>
     </nav>
+
+    <!-- MAIN QUIZ CONTENT on the website.  -->
+
     <main>
         <div class="container">
+
+            <!-- Each section (div#) generated with users actions -->
+
             <div id="user-setup">
 
             </div>
             <div id="quiz-wrapper">
+                <div id="quiz-header">
 
+                </div>
+                <div id="quiz-body">
+                    <h2 id="question">Question Text
+                    </h2>
+                    <p id="answer_a">answer a</p>
+                    <p id="answer_b">answer b</p>
+                    <p id="answer_c">answer c</p>
+                    <p id="answer_d">answer d</p>
+                </div>
+                <button id="quiz-submit">Next</button>
             </div>
             <div id="quiz-complete">
 
             </div>
         </div>
     </main>
+
+    <!-- FOOTER - simple branding and author -->
+
     <footer>
         <div class="container">
             <div id="footer-content">
