@@ -93,3 +93,27 @@ const answer_a = document.querySelector('#answer_a')
 const answer_b = document.querySelector('#answer_b')
 const answer_c = document.querySelector('#answer_c')
 const answer_d = document.querySelector('#answer_d')
+
+
+
+
+/* Generates quiz data from quizQuestions array
+and fills the DOM with it */
+let questionData = 0
+let currentScore = 0
+
+
+function loadQuiz() {
+    let currentQuiz = quizQuestions[questionData]
+    questionEl.textContent = currentQuiz.Question
+    answer_a.textContent = currentQuiz.a
+    answer_b.textContent = currentQuiz.b
+    answer_c.textContent = currentQuiz.c
+    answer_d.textContent = currentQuiz.d
+
+
+}
+
+
+
+loadQuiz();
