@@ -7,7 +7,7 @@ const quizQuestions = [{
         b: 'Bilbo',
         c: 'Frodo',
         d: 'Sauron',
-        answer: 4
+        answer: 'b',
     },
     {
         Question: 'Who do the hobbits encounter at the Prancing Pony? ',
@@ -15,7 +15,7 @@ const quizQuestions = [{
         b: 'Legolas',
         c: 'Strider',
         d: 'Boromir',
-        answer: 3
+        answer: 'c',
     },
     {
         Question: 'How many members make up the fellowship of the ring? ',
@@ -23,7 +23,7 @@ const quizQuestions = [{
         b: 'eight',
         c: 'nine',
         d: 'ten',
-        answer: 3
+        answer: 'c',
 
     },
     {
@@ -32,7 +32,7 @@ const quizQuestions = [{
         b: 'Legolas',
         c: 'Merry',
         d: 'Boromir',
-        answer: 2
+        answer: 'b',
 
     },
     {
@@ -41,7 +41,7 @@ const quizQuestions = [{
         b: 'Legolas',
         c: 'Merry',
         d: 'Boromir',
-        answer: 1
+        answer: 'a',
     },
     {
 
@@ -50,7 +50,7 @@ const quizQuestions = [{
         b: 'Lothlorien',
         c: 'Moria',
         d: 'Minas Tirith',
-        answer: 1
+        answer: 'a',
 
     },
     {
@@ -59,7 +59,7 @@ const quizQuestions = [{
         b: 'Boromir is killed',
         c: 'Frodo and Sam leave the others behind',
         d: 'All of the above',
-        answer: 4
+        answer: 'd',
 
     },
     {
@@ -68,7 +68,7 @@ const quizQuestions = [{
         b: 'Sméagol',
         c: 'A and B',
         d: 'None of the above',
-        answer: 3
+        answer: 'c',
 
     },
     {
@@ -77,7 +77,7 @@ const quizQuestions = [{
         b: 'Théoden',
         c: 'Éowyn',
         d: 'Éomer',
-        answer: 2
+        answer: 'b',
 
     }
 ]
@@ -89,31 +89,62 @@ const quizWrapper = document.querySelector('#quiz-wrapper')
 const quizCompleteEl = document.querySelector('#quiz-complete')
 const questionEl = document.querySelector('#question')
 const submitQ = document.querySelector('#quiz-submit')
-const answer_a = document.querySelector('#answer_a')
-const answer_b = document.querySelector('#answer_b')
-const answer_c = document.querySelector('#answer_c')
-const answer_d = document.querySelector('#answer_d')
+const answer_a = document.querySelector('#a')
+const answer_b = document.querySelector('#b')
+const answer_c = document.querySelector('#c')
+const answer_d = document.querySelector('#d')
+const answerEls = document.querySelectorAll('.answers')
 
-
-
-
-/* Generates quiz data from quizQuestions array
-and fills the DOM with it */
 let questionData = 0
 let currentScore = 0
 
+/* Generates quiz data from quizQuestions array
+and fills the DOM with it */
+let currentQuiz = quizQuestions[questionData]
 
 function loadQuiz() {
-    let currentQuiz = quizQuestions[questionData]
     questionEl.textContent = currentQuiz.Question
     answer_a.textContent = currentQuiz.a
     answer_b.textContent = currentQuiz.b
     answer_c.textContent = currentQuiz.c
     answer_d.textContent = currentQuiz.d
+    checkAnswer();
+}
+// when user click on any answer return the id of the clicked element and match against the correct answer.
+function checkAnswer() {
+    for (userAnswer of answerEls) {
+        (function(userAnswer) {
+            userAnswer.addEventListener('click', function() {
+                console.log(userAnswer.id);
+
+                if (userAnswer.id === currentQuiz.answer) {
+                    console.log('correct')
+                    currentQuiz++
+                } else {
+                    console.log('incorrect');
+
+                }
 
 
+            })
+
+
+        })(userAnswer)
+    }
 }
 
-
-
 loadQuiz();
+
+
+/*
+    answerEls.forEach(answerEl => {
+        answerEl.addEventListener('click', () => {
+            userAnswer = answerEl.id
+            checkAnswer();
+            console.log("user selected " + userAnswer);
+            return userAnswer
+
+        })
+
+    });
+    */
