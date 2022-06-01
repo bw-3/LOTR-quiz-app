@@ -103,23 +103,27 @@ and fills the DOM with it */
 let currentQuiz = quizQuestions[questionData]
 
 function loadQuiz() {
-    questionEl.textContent = currentQuiz.Question
-    answer_a.textContent = currentQuiz.a
-    answer_b.textContent = currentQuiz.b
-    answer_c.textContent = currentQuiz.c
-    answer_d.textContent = currentQuiz.d
-    checkAnswer();
+    // Randomize current question
+    let randomizeQuestion = Math.floor(Math.random() * quizQuestions.length)
+    let currentRandomQuestion = quizQuestions[randomizeQuestion]
+    console.log(currentRandomQuestion);
+
+    questionEl.textContent = currentRandomQuestion.Question
+    answer_a.textContent = currentRandomQuestion.a
+    answer_b.textContent = currentRandomQuestion.b
+    answer_c.textContent = currentRandomQuestion.c
+    answer_d.textContent = currentRandomQuestion.d
+    checkAnswer(currentRandomQuestion);
 }
 // when user click on any answer return the id of the clicked element and match against the correct answer.
-function checkAnswer() {
+function checkAnswer(currentRandomQuestion) {
     for (userAnswer of answerEls) {
         (function(userAnswer) {
             userAnswer.addEventListener('click', function() {
                 console.log(userAnswer.id);
 
-                if (userAnswer.id === currentQuiz.answer) {
+                if (userAnswer.id === currentRandomQuestion.answer) {
                     console.log('correct')
-                    currentQuiz++
                 } else {
                     console.log('incorrect');
 
